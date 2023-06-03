@@ -1,4 +1,4 @@
-PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n↪ \$ '
+PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
 
-alias sshi=ssh -o StrictHostKeychecking=no UserKnownHostsFile=/dev/null
-alias scpi=scp -o StrictHostKeychecking=no UserKnownHostsFile=/dev/null
+alias sshi="ssh -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
+alias scpi="scp -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
