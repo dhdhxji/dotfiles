@@ -1,0 +1,3 @@
+Warning: This repo created for personal use not for public, it may contain unstable changes which break everything, so no warranties of any kind [(c)](https://opensource.org/license/mit/)
+
+Initially, the goal of this repo was for storing my main setup dotfiles, but now my ultimate goal is to store the overall local environment setup here, which includes the software I use, configs for it etc and automate the installation process in the new machines as much as possible. Possibly it will leverage the distrobox w/ export for each individual piece of software required, or smth like ansible. But other ways to do so are under consideration...
