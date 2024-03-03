@@ -2,6 +2,11 @@ Warning: This repo created for personal use not for public, it may contain unsta
 
 Initially, the goal of this repo was for storing my main setup dotfiles, but now my ultimate goal is to store the overall local environment setup here, which includes the software I use, configs for it etc and automate the installation process in the new machines as much as possible. Possibly it will leverage the distrobox w/ export for each individual piece of software required, or smth like ansible. But other ways to do so are under consideration...
 
+### Bootstrap script
+```bash
+curl https://raw.githubusercontent.com/dhdhxji/dotfiles/master/bootstrap.sh | bash
+```
+
 
 ### Containers approach (Just thoughts)
 In general, each utility configured by this approach will be run in separate container, which can have huge disk footprint... But is very simple to set up and have small amount of requirements to target system: container system (docker/podman/etc) and arch support by used containers (and possibly some tool to manage all of that, which btw also can be run inside container. Recursion=))

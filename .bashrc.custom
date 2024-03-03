@@ -1,0 +1,9 @@
+if [ "$(type -t __git_ps1)" == "function" ]; then
+    GIT_PS1="__git_ps1"
+else
+    GIT_PS1='echo " (WARN: __git_ps1 not found)"'
+fi
+PS1="\[\033]0;\$TITLEPREFIX:\$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]\$MSYSTEM \[\033[33m\]\w\[\033[36m\]\`$GIT_PS1\`\[\033[0m\]\n\$ "
+
+alias sshi="ssh -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
+alias scpi="scp -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
