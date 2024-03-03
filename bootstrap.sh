@@ -7,7 +7,7 @@ cd /tmp/dotfiles
 
 
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
 cp .tmux.conf ~
 
 BASHRC_CUSTOM_FILENAME=".bashrc.custom"
