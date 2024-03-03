@@ -18,6 +18,6 @@ cp $BASHRC_CUSTOM_FILENAME ~/$BASHRC_CUSTOM_FILENAME
 mkdir -p ~/.config/
 cp -r .config/nvim ~/.config/nvim
 
-cp .gitconfig ~
+[ ! -f ~/.gitconfig ] && cp .gitconfig ~ || echo "WARN: .gitconfig already exists, skipping (may require manual configuration)"
 
 cd -
