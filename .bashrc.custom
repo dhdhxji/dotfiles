@@ -10,3 +10,11 @@ PS1='\[\e[38;5;40m\]\u@\h\[\e[0m\]:\[\e[38;5;27m\]\w\[\e[0m\] \[\e[38;5;39m\]${P
 
 alias sshi="ssh -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
 alias scpi="scp -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null"
+
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
