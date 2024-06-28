@@ -1,7 +1,13 @@
 #!/bin/sh
 
-YADM_LOCATION="$HOME/.local/bin/yadm"
-mkdir -p $(dirname $YADM_LOCATION)
-curl -fLo $YADM_LOCATION https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x $YADM_LOCATION
+STOW_MODULES="git nvim tmux bash"
 
-$YADM_LOCATION clone https://github.com/dhdhxji/dotfiles --bootstrap
+stow ${STOW_MODULES} --target=$HOME
+
+# And run additional setups here 
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    mkdir -p $HOME/.tmux/plugins
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm || true
+fi
+
+! grep -q "source ~/.bashrc.custom" ~/.bashrc && echo "source ~/.bashrc.custom" >> ~/.bashrc
