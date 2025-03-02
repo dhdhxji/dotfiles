@@ -26,3 +26,6 @@ pathadd() {
 }
 
 pathadd $HOME/.local/bin/
+eval "$(direnv hook bash)"
+
+
