@@ -57,6 +57,7 @@ stow_dotfiles() {
 
 bootstrap_home_manager () {
     ensure_command_exists nix || return 1
+    ensure_command_exists git || nix profile install nixpkgs\#git
     
     nix run home-manager/master -- build
     nix run home-manager/master -- switch
@@ -67,7 +68,7 @@ bootstrap_home_manager () {
 
 
 ensure_variable_set "USER" "Err: USER variable is required for nix to be set"
-ensure_variable_set "XDG_CONFIG_HOME"
+# ensure_variable_set "XDG_CONFIG_HOME"
 
 [ -e ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 ensure_command_exists nix "Err: Nix pakcage manager is required for this to work. https://nixos.org/download/" \
@@ -76,7 +77,7 @@ ensure_command_exists nix "Err: Nix pakcage manager is required for this to work
 
 
 # This will work only for bootstrapping, the rest of config relies on dotfdiles
-export NIX_CONF_DIR="${SCRIPT_DIR}/stow-modules/nix/"
+export NIX_CONF_DIR="${SCRIPT_DIR}/stow-modules/nix/.config/nix"
 stow_dotfiles || ask_yes_or_no "Stow has exited with error >_<. Continue?"
 bootstrap_home_manager 
 
