@@ -1,6 +1,6 @@
 #!/bin/sh
 
-STOW_MODULES="git nvim tmux bash"
+STOW_MODULES="git nvim tmux bash vim"
 
 for module in ${STOW_MODULES}
 do
