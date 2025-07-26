@@ -8,3 +8,4 @@ set mouse=a
 set number
 set relativenumber
 :filetype plugin on
+set belloff=all
