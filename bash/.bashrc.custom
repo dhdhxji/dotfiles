@@ -26,3 +26,5 @@ pathadd() {
 }
 
 pathadd $HOME/.local/bin/
+
+bind 'set bell-style none'
