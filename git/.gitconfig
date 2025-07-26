@@ -4,9 +4,6 @@
 	br = branch
 	st = status
 	hist = log --pretty=format:\"\\%h \\%ad | \\%s\\%d [\\%an]\" --graph --date=short
-[user]
-	name = dhdhxji
-	email = keysindie@gmail.com
 [init]
 	defaultBranch = main
 [core]
