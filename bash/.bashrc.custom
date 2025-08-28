@@ -28,3 +28,6 @@ pathadd() {
 pathadd $HOME/.local/bin/
 
 bind 'set bell-style none'
+
+[ -f /usr/bin/direnv ] && eval "$(direnv hook bash)"
+
