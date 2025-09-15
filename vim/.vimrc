@@ -9,3 +9,7 @@ set number
 set relativenumber
 :filetype plugin on
 set belloff=all
+
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --hidden\ --glob\ '!.git'
+endif
